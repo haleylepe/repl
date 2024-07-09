@@ -1,0 +1,68 @@
+DIGEST 3b0ab81824862f57678217b3fd0b00dd
+FRepl.Semantics
+R15:18 Coq.Lists.List <> <> lib
+R28:40 Coq.Lists.List ListNotations <> mod
+R95:100 Repl.Syntax <> <> lib
+ind 114:119 <> result
+constr 133:139 <> success
+constr 160:166 <> failure
+R147:150 Coq.Init.Datatypes <> list ind
+R152:155 Repl.Syntax <> goal defax
+binder 142:143 <> gs:3
+scheme 114:119 <> result_rect
+scheme 114:119 <> result_ind
+scheme 114:119 <> result_rec
+scheme 114:119 <> result_sind
+ax 180:189 <> run_atomic
+R199:202 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R193:198 Repl.Syntax <> atomic defax
+R207:210 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R203:206 Repl.Syntax <> goal defax
+R211:216 Repl.Semantics <> result ind
+ind 230:243 <> execute_atomic
+constr 285:292 <> e_atomic
+R253:256 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R247:252 Repl.Syntax <> atomic defax
+R261:264 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R257:260 Repl.Syntax <> goal defax
+R271:274 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R265:270 Repl.Semantics <> result ind
+binder 303:303 <> a:7
+binder 305:305 <> g:8
+R310:323 Repl.Semantics <> execute_atomic:5 ind
+R330:339 Repl.Semantics <> run_atomic defax
+R341:341 Repl.Semantics <> a:7 var
+R343:343 Repl.Semantics <> g:8 var
+R327:327 Repl.Semantics <> g:8 var
+R325:325 Repl.Semantics <> a:7 var
+scheme 230:243 <> execute_atomic_ind
+scheme 230:243 <> execute_atomic_sind
+ind 358:371 <> execute_tactic
+constr 413:420 <> e_single
+constr 504:509 <> e_zero
+R381:384 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R375:380 Repl.Syntax <> tactic ind
+R389:392 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R385:388 Repl.Syntax <> goal defax
+R399:402 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R393:398 Repl.Semantics <> result ind
+binder 431:431 <> a:11
+binder 433:433 <> g:12
+binder 435:437 <> out:13
+R464:469 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R442:455 Repl.Semantics <> execute_atomic ind
+R457:457 Repl.Semantics <> a:11 var
+R459:459 Repl.Semantics <> g:12 var
+R461:463 Repl.Semantics <> out:13 var
+R470:483 Repl.Semantics <> execute_tactic:9 ind
+R498:500 Repl.Semantics <> out:13 var
+R496:496 Repl.Semantics <> g:12 var
+R486:491 Repl.Syntax <> single constr
+R493:493 Repl.Semantics <> a:11 var
+binder 520:520 <> g:14
+R525:538 Repl.Semantics <> execute_tactic:9 ind
+R547:553 Repl.Semantics <> failure constr
+R545:545 Repl.Semantics <> g:14 var
+R540:543 Repl.Syntax <> zero constr
+scheme 358:371 <> execute_tactic_ind
+scheme 358:371 <> execute_tactic_sind

@@ -1,0 +1,22 @@
+DIGEST 47b2e6358b86a4a19615aa79fc678f8b
+FRepl.Syntax
+R15:20 Coq.Strings.String <> <> lib
+R38:41 Coq.Lists.List <> <> lib
+R51:63 Coq.Lists.List ListNotations <> mod
+def 78:82 <> ident
+R87:92 Coq.Strings.String <> string ind
+ax 106:111 <> atomic
+ax 130:133 <> goal
+ind 153:158 <> tactic
+constr 173:178 <> single
+constr 255:258 <> zero
+constr 300:303 <> plus
+R185:190 Repl.Syntax <> atomic defax
+binder 181:181 <> a:5
+R314:319 Repl.Syntax <> tactic:3 ind
+binder 306:307 <> t1:6
+binder 309:310 <> t2:7
+scheme 153:158 <> tactic_rect
+scheme 153:158 <> tactic_ind
+scheme 153:158 <> tactic_rec
+scheme 153:158 <> tactic_sind
