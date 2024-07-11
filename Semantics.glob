@@ -1,68 +1,223 @@
-DIGEST 3b0ab81824862f57678217b3fd0b00dd
+DIGEST 37b1fbb3c3fbe7865bc8f2cd0065798b
 FRepl.Semantics
 R15:18 Coq.Lists.List <> <> lib
-R28:40 Coq.Lists.List ListNotations <> mod
-R95:100 Repl.Syntax <> <> lib
-ind 114:119 <> result
-constr 133:139 <> success
-constr 160:166 <> failure
-R147:150 Coq.Init.Datatypes <> list ind
-R152:155 Repl.Syntax <> goal defax
-binder 142:143 <> gs:3
-scheme 114:119 <> result_rect
-scheme 114:119 <> result_ind
-scheme 114:119 <> result_rec
-scheme 114:119 <> result_sind
-ax 180:189 <> run_atomic
-R199:202 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R193:198 Repl.Syntax <> atomic defax
-R207:210 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R203:206 Repl.Syntax <> goal defax
-R211:216 Repl.Semantics <> result ind
-ind 230:243 <> execute_atomic
-constr 285:292 <> e_atomic
-R253:256 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R247:252 Repl.Syntax <> atomic defax
-R261:264 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R257:260 Repl.Syntax <> goal defax
-R271:274 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R265:270 Repl.Semantics <> result ind
-binder 303:303 <> a:7
-binder 305:305 <> g:8
-R310:323 Repl.Semantics <> execute_atomic:5 ind
-R330:339 Repl.Semantics <> run_atomic defax
-R341:341 Repl.Semantics <> a:7 var
-R343:343 Repl.Semantics <> g:8 var
-R327:327 Repl.Semantics <> g:8 var
-R325:325 Repl.Semantics <> a:7 var
-scheme 230:243 <> execute_atomic_ind
-scheme 230:243 <> execute_atomic_sind
-ind 358:371 <> execute_tactic
-constr 413:420 <> e_single
-constr 504:509 <> e_zero
-R381:384 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R375:380 Repl.Syntax <> tactic ind
-R389:392 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R385:388 Repl.Syntax <> goal defax
-R399:402 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R393:398 Repl.Semantics <> result ind
-binder 431:431 <> a:11
-binder 433:433 <> g:12
-binder 435:437 <> out:13
-R464:469 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R442:455 Repl.Semantics <> execute_atomic ind
-R457:457 Repl.Semantics <> a:11 var
-R459:459 Repl.Semantics <> g:12 var
-R461:463 Repl.Semantics <> out:13 var
-R470:483 Repl.Semantics <> execute_tactic:9 ind
-R498:500 Repl.Semantics <> out:13 var
-R496:496 Repl.Semantics <> g:12 var
-R486:491 Repl.Syntax <> single constr
-R493:493 Repl.Semantics <> a:11 var
-binder 520:520 <> g:14
-R525:538 Repl.Semantics <> execute_tactic:9 ind
-R547:553 Repl.Semantics <> failure constr
-R545:545 Repl.Semantics <> g:14 var
-R540:543 Repl.Syntax <> zero constr
-scheme 358:371 <> execute_tactic_ind
-scheme 358:371 <> execute_tactic_sind
+R36:41 Coq.Strings.String <> <> lib
+R52:64 Coq.Lists.List ListNotations <> mod
+R119:124 Repl.Syntax <> <> lib
+ind 139:144 <> result
+constr 158:164 <> success
+constr 306:319 <> recoverableErr
+constr 464:476 <> irrecoverable
+R172:175 Coq.Init.Datatypes <> list ind
+R177:180 Repl.Syntax <> goal defax
+binder 167:168 <> gs:3
+R482:490 Repl.Syntax <> exception ind
+binder 479:479 <> e:4
+scheme 139:144 <> result_rect
+scheme 139:144 <> result_ind
+scheme 139:144 <> result_rec
+scheme 139:144 <> result_sind
+ax 858:867 <> run_atomic
+R877:880 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R871:876 Repl.Syntax <> atomic defax
+R885:888 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R881:884 Repl.Syntax <> goal defax
+R889:894 Repl.Semantics <> result ind
+ind 908:921 <> execute_atomic
+constr 963:970 <> e_atomic
+R931:934 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R925:930 Repl.Syntax <> atomic defax
+R939:942 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R935:938 Repl.Syntax <> goal defax
+R949:952 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R943:948 Repl.Semantics <> result ind
+binder 981:981 <> a:8
+binder 983:983 <> g:9
+R988:1001 Repl.Semantics <> execute_atomic:6 ind
+R1008:1017 Repl.Semantics <> run_atomic defax
+R1019:1019 Repl.Semantics <> a:8 var
+R1021:1021 Repl.Semantics <> g:9 var
+R1005:1005 Repl.Semantics <> g:9 var
+R1003:1003 Repl.Semantics <> a:8 var
+scheme 908:921 <> execute_atomic_ind
+scheme 908:921 <> execute_atomic_sind
+ind 1102:1115 <> execute_tactic
+constr 1157:1164 <> e_single
+constr 1248:1253 <> e_zero
+constr 1318:1329 <> e_plus_okay1
+constr 1446:1457 <> e_plus_okay2
+constr 1599:1605 <> e_throw
+constr 1799:1813 <> e_plus_notOkay1
+R1125:1128 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1119:1124 Repl.Syntax <> tactic ind
+R1133:1136 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1129:1132 Repl.Syntax <> goal defax
+R1143:1146 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1137:1142 Repl.Semantics <> result ind
+binder 1175:1175 <> a:12
+binder 1177:1177 <> g:13
+binder 1179:1181 <> out:14
+R1208:1213 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1186:1199 Repl.Semantics <> execute_atomic ind
+R1201:1201 Repl.Semantics <> a:12 var
+R1203:1203 Repl.Semantics <> g:13 var
+R1205:1207 Repl.Semantics <> out:14 var
+R1214:1227 Repl.Semantics <> execute_tactic:10 ind
+R1242:1244 Repl.Semantics <> out:14 var
+R1240:1240 Repl.Semantics <> g:13 var
+R1230:1235 Repl.Syntax <> single constr
+R1237:1237 Repl.Semantics <> a:12 var
+binder 1264:1264 <> g:15
+binder 1266:1266 <> e:16
+R1272:1285 Repl.Semantics <> execute_tactic:10 ind
+R1299:1312 Repl.Semantics <> recoverableErr constr
+R1296:1296 Repl.Semantics <> g:15 var
+R1288:1291 Repl.Syntax <> zero constr
+R1293:1293 Repl.Semantics <> e:16 var
+binder 1340:1341 <> t1:17
+binder 1343:1344 <> t2:18
+binder 1346:1346 <> g:19
+binder 1348:1352 <> outl1:20
+R1392:1397 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1357:1370 Repl.Semantics <> execute_tactic:10 ind
+R1378:1384 Repl.Semantics <> success constr
+R1386:1390 Repl.Semantics <> outl1:20 var
+R1375:1375 Repl.Semantics <> g:19 var
+R1372:1373 Repl.Semantics <> t1:17 var
+R1398:1411 Repl.Semantics <> execute_tactic:10 ind
+R1429:1435 Repl.Semantics <> success constr
+R1437:1441 Repl.Semantics <> outl1:20 var
+R1426:1426 Repl.Semantics <> g:19 var
+R1414:1417 Repl.Syntax <> plus constr
+R1419:1420 Repl.Semantics <> t1:17 var
+R1422:1423 Repl.Semantics <> t2:18 var
+binder 1468:1469 <> t1:21
+binder 1471:1472 <> t2:22
+binder 1474:1474 <> g:23
+binder 1476:1480 <> outl2:24
+R1522:1527 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1485:1498 Repl.Semantics <> execute_tactic:10 ind
+R1506:1519 Repl.Semantics <> recoverableErr constr
+R1503:1503 Repl.Semantics <> g:23 var
+R1500:1501 Repl.Semantics <> t1:21 var
+R1553:1558 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1528:1541 Repl.Semantics <> execute_tactic:10 ind
+R1548:1552 Repl.Semantics <> outl2:24 var
+R1546:1546 Repl.Semantics <> g:23 var
+R1543:1544 Repl.Semantics <> t2:22 var
+R1559:1572 Repl.Semantics <> execute_tactic:10 ind
+R1590:1594 Repl.Semantics <> outl2:24 var
+R1587:1587 Repl.Semantics <> g:23 var
+R1575:1578 Repl.Syntax <> plus constr
+R1580:1581 Repl.Semantics <> t1:21 var
+R1583:1584 Repl.Semantics <> t2:22 var
+binder 1616:1616 <> e:25
+binder 1618:1618 <> g:26
+R1623:1636 Repl.Semantics <> execute_tactic:10 ind
+R1651:1663 Repl.Semantics <> irrecoverable constr
+R1665:1665 Repl.Semantics <> e:25 var
+R1648:1648 Repl.Semantics <> g:26 var
+R1639:1643 Repl.Syntax <> throw constr
+R1645:1645 Repl.Semantics <> e:25 var
+binder 1824:1825 <> t1:27
+binder 1827:1828 <> t2:28
+binder 1830:1830 <> g:29
+binder 1832:1832 <> e:30
+R1873:1876 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1836:1849 Repl.Semantics <> execute_tactic:10 ind
+R1857:1869 Repl.Semantics <> irrecoverable constr
+R1871:1871 Repl.Semantics <> e:30 var
+R1854:1854 Repl.Semantics <> g:29 var
+R1851:1852 Repl.Semantics <> t1:27 var
+R1877:1890 Repl.Semantics <> execute_tactic:10 ind
+R1908:1920 Repl.Semantics <> irrecoverable constr
+R1922:1922 Repl.Semantics <> e:30 var
+R1905:1905 Repl.Semantics <> g:29 var
+R1893:1896 Repl.Syntax <> plus constr
+R1898:1899 Repl.Semantics <> t1:27 var
+R1901:1902 Repl.Semantics <> t2:28 var
+scheme 1102:1115 <> execute_tactic_ind
+scheme 1102:1115 <> execute_tactic_sind
+def 2015:2172 <> Unnamed_thm
+binder 2027:2028 <> t1:31
+binder 2030:2031 <> t2:32
+binder 2033:2033 <> g:33
+binder 2035:2039 <> outl2:34
+R2081:2086 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2044:2057 Repl.Semantics <> execute_tactic ind
+R2059:2060 Repl.Semantics <> t1:31 var
+R2062:2062 Repl.Semantics <> g:33 var
+R2065:2078 Repl.Semantics <> recoverableErr constr
+R2122:2127 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2087:2100 Repl.Semantics <> execute_tactic ind
+R2102:2103 Repl.Semantics <> t2:32 var
+R2105:2105 Repl.Semantics <> g:33 var
+R2108:2114 Repl.Semantics <> success constr
+R2116:2120 Repl.Semantics <> outl2:34 var
+R2128:2141 Repl.Semantics <> execute_tactic ind
+R2144:2147 Repl.Syntax <> plus constr
+R2149:2150 Repl.Semantics <> t1:31 var
+R2152:2153 Repl.Semantics <> t2:32 var
+R2156:2156 Repl.Semantics <> g:33 var
+R2159:2165 Repl.Semantics <> success constr
+R2167:2171 Repl.Semantics <> outl2:34 var
+R2214:2225 Repl.Semantics <> e_plus_okay2 constr
+R2214:2225 Repl.Semantics <> e_plus_okay2 constr
+def 2323:2478 <> Unnamed_thm0
+binder 2335:2336 <> t1:35
+binder 2338:2339 <> t2:36
+binder 2341:2341 <> g:37
+binder 2343:2347 <> outl1:38
+binder 2349:2353 <> outl2:39
+R2391:2394 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2356:2369 Repl.Semantics <> execute_tactic ind
+R2371:2372 Repl.Semantics <> t1:35 var
+R2374:2374 Repl.Semantics <> g:37 var
+R2377:2383 Repl.Semantics <> success constr
+R2385:2389 Repl.Semantics <> outl1:38 var
+R2430:2433 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2395:2408 Repl.Semantics <> execute_tactic ind
+R2410:2411 Repl.Semantics <> t2:36 var
+R2413:2413 Repl.Semantics <> g:37 var
+R2416:2422 Repl.Semantics <> success constr
+R2424:2428 Repl.Semantics <> outl2:39 var
+R2434:2447 Repl.Semantics <> execute_tactic ind
+R2450:2453 Repl.Syntax <> plus constr
+R2455:2456 Repl.Semantics <> t1:35 var
+R2458:2459 Repl.Semantics <> t2:36 var
+R2462:2462 Repl.Semantics <> g:37 var
+R2465:2471 Repl.Semantics <> success constr
+R2473:2477 Repl.Semantics <> outl1:38 var
+R2503:2514 Repl.Semantics <> e_plus_okay1 constr
+R2503:2514 Repl.Semantics <> e_plus_okay1 constr
+def 2620:2775 <> Unnamed_thm1
+binder 2632:2633 <> t1:40
+binder 2635:2636 <> t2:41
+binder 2638:2638 <> g:42
+binder 2640:2644 <> outl2:43
+binder 2646:2646 <> e:44
+R2686:2689 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2649:2662 Repl.Semantics <> execute_tactic ind
+R2664:2665 Repl.Semantics <> t1:40 var
+R2667:2667 Repl.Semantics <> g:42 var
+R2669:2681 Repl.Semantics <> irrecoverable constr
+R2683:2683 Repl.Semantics <> e:44 var
+R2725:2728 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2690:2703 Repl.Semantics <> execute_tactic ind
+R2705:2706 Repl.Semantics <> t2:41 var
+R2708:2708 Repl.Semantics <> g:42 var
+R2711:2717 Repl.Semantics <> success constr
+R2719:2723 Repl.Semantics <> outl2:43 var
+R2729:2742 Repl.Semantics <> execute_tactic ind
+R2745:2748 Repl.Syntax <> plus constr
+R2750:2751 Repl.Semantics <> t1:40 var
+R2753:2754 Repl.Semantics <> t2:41 var
+R2757:2757 Repl.Semantics <> g:42 var
+R2760:2772 Repl.Semantics <> irrecoverable constr
+R2774:2774 Repl.Semantics <> e:44 var
+R2801:2815 Repl.Semantics <> e_plus_notOkay1 constr
+R2801:2815 Repl.Semantics <> e_plus_notOkay1 constr
+def 2946:2976 <> Unnamed_thm2
+binder 2958:2958 <> e:45
+binder 2960:2960 <> g:46
+R2963:2976 Repl.Semantics <> execute_tactic ind
