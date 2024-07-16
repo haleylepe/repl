@@ -1,4 +1,4 @@
-DIGEST 3394c99c1962870d66e54494b3429a7c
+DIGEST eaeea9bb9e4c5e272524a249fc0358cf
 FRepl.Syntax
 R15:20 Coq.Strings.String <> <> lib
 R38:41 Coq.Lists.List <> <> lib
@@ -8,30 +8,36 @@ R87:92 Coq.Strings.String <> string ind
 ax 106:111 <> atomic
 ax 130:133 <> goal
 ind 153:161 <> exception
-constr 175:177 <> exn
-R187:190 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R181:186 Coq.Strings.String <> string ind
-R191:199 Repl.Syntax <> exception:3 ind
+constr 210:215 <> exn_f1
+constr 219:224 <> exn_f2
+constr 228:234 <> exn_var
+R240:245 Coq.Strings.String <> string ind
+binder 237:237 <> x:5
 scheme 153:161 <> exception_rect
 scheme 153:161 <> exception_ind
 scheme 153:161 <> exception_rec
 scheme 153:161 <> exception_sind
-ax 213:216 <> unit
-ind 237:242 <> tactic
-constr 257:262 <> single
-constr 279:282 <> zero
-constr 349:352 <> plus
-constr 444:448 <> throw
-R269:274 Repl.Syntax <> atomic defax
-binder 265:265 <> a:8
-R289:297 Repl.Syntax <> exception ind
-binder 285:285 <> e:9
-R363:368 Repl.Syntax <> tactic:6 ind
-binder 355:356 <> t1:10
-binder 358:359 <> t2:11
-R455:463 Repl.Syntax <> exception ind
-binder 451:451 <> e:12
-scheme 237:242 <> tactic_rect
-scheme 237:242 <> tactic_ind
-scheme 237:242 <> tactic_rec
-scheme 237:242 <> tactic_sind
+ind 291:296 <> tactic
+constr 311:316 <> single
+constr 333:336 <> zero
+constr 403:406 <> plus
+constr 498:502 <> throw
+constr 569:574 <> tMatch
+R323:328 Repl.Syntax <> atomic defax
+binder 319:319 <> a:8
+R343:351 Repl.Syntax <> exception ind
+binder 339:339 <> e:9
+R417:422 Repl.Syntax <> tactic:6 ind
+binder 409:410 <> t1:10
+binder 412:413 <> t2:11
+R509:517 Repl.Syntax <> exception ind
+binder 505:505 <> e:12
+R580:588 Repl.Syntax <> exception ind
+binder 577:577 <> e:13
+R610:615 Repl.Syntax <> tactic:6 ind
+binder 592:598 <> handle1:14
+binder 600:606 <> handle2:15
+scheme 291:296 <> tactic_rect
+scheme 291:296 <> tactic_ind
+scheme 291:296 <> tactic_rec
+scheme 291:296 <> tactic_sind
