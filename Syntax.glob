@@ -1,4 +1,4 @@
-DIGEST eaeea9bb9e4c5e272524a249fc0358cf
+DIGEST 4a4d0cd9e495d69658e94a3214ec108b
 FRepl.Syntax
 R15:20 Coq.Strings.String <> <> lib
 R38:41 Coq.Lists.List <> <> lib
@@ -7,37 +7,104 @@ def 78:82 <> ident
 R87:92 Coq.Strings.String <> string ind
 ax 106:111 <> atomic
 ax 130:133 <> goal
-ind 153:161 <> exception
-constr 210:215 <> exn_f1
-constr 219:224 <> exn_f2
-constr 228:234 <> exn_var
-R240:245 Coq.Strings.String <> string ind
-binder 237:237 <> x:5
-scheme 153:161 <> exception_rect
-scheme 153:161 <> exception_ind
-scheme 153:161 <> exception_rec
-scheme 153:161 <> exception_sind
-ind 291:296 <> tactic
-constr 311:316 <> single
-constr 333:336 <> zero
-constr 403:406 <> plus
-constr 498:502 <> throw
-constr 569:574 <> tMatch
-R323:328 Repl.Syntax <> atomic defax
-binder 319:319 <> a:8
-R343:351 Repl.Syntax <> exception ind
-binder 339:339 <> e:9
-R417:422 Repl.Syntax <> tactic:6 ind
-binder 409:410 <> t1:10
-binder 412:413 <> t2:11
-R509:517 Repl.Syntax <> exception ind
-binder 505:505 <> e:12
-R580:588 Repl.Syntax <> exception ind
-binder 577:577 <> e:13
-R610:615 Repl.Syntax <> tactic:6 ind
-binder 592:598 <> handle1:14
-binder 600:606 <> handle2:15
-scheme 291:296 <> tactic_rect
-scheme 291:296 <> tactic_ind
-scheme 291:296 <> tactic_rec
-scheme 291:296 <> tactic_sind
+ind 155:163 <> exception
+constr 212:217 <> exn_f1
+constr 250:255 <> exn_f2
+constr 290:296 <> exn_var
+R302:307 Coq.Strings.String <> string ind
+binder 299:299 <> x:5
+scheme 155:163 <> exception_rect
+scheme 155:163 <> exception_ind
+scheme 155:163 <> exception_rec
+scheme 155:163 <> exception_sind
+ind 379:384 <> tactic
+constr 399:404 <> single
+constr 421:424 <> zero
+constr 491:494 <> plus
+constr 609:613 <> throw
+constr 680:685 <> tMatch
+R411:416 Repl.Syntax <> atomic defax
+binder 407:407 <> a:8
+R431:439 Repl.Syntax <> exception ind
+binder 427:427 <> e:9
+R502:507 Repl.Syntax <> tactic:6 ind
+binder 497:498 <> t1:10
+R515:520 Coq.Strings.String <> string ind
+binder 512:512 <> x:11
+R528:533 Repl.Syntax <> tactic:6 ind
+binder 524:525 <> t2:12
+R620:628 Repl.Syntax <> exception ind
+binder 616:616 <> e:13
+R691:699 Repl.Syntax <> exception ind
+binder 688:688 <> e:14
+R721:726 Repl.Syntax <> tactic:6 ind
+binder 703:709 <> handle1:15
+binder 711:717 <> handle2:16
+scheme 379:384 <> tactic_rect
+scheme 379:384 <> tactic_ind
+scheme 379:384 <> tactic_rec
+scheme 379:384 <> tactic_sind
+def 778:786 <> subst_exn
+R794:802 Repl.Syntax <> exception ind
+binder 789:790 <> e1:17
+R810:815 Coq.Strings.String <> string ind
+binder 806:806 <> x:18
+R824:832 Repl.Syntax <> exception ind
+binder 819:820 <> e2:19
+R837:845 Repl.Syntax <> exception ind
+R860:861 Repl.Syntax <> e1:17 var
+R875:880 Repl.Syntax <> exn_f1 constr
+R885:890 Repl.Syntax <> exn_f1 constr
+R898:903 Repl.Syntax <> exn_f2 constr
+R908:913 Repl.Syntax <> exn_f2 constr
+R921:927 Repl.Syntax <> exn_var constr
+R938:947 Coq.Strings.String <> eqb def
+R949:949 Repl.Syntax <> x:18 var
+R1011:1012 Repl.Syntax <> e1:17 var
+R983:984 Repl.Syntax <> e2:19 var
+def 1034:1045 <> subst_tactic
+R1052:1057 Repl.Syntax <> tactic ind
+binder 1048:1048 <> t:21
+R1065:1070 Coq.Strings.String <> string ind
+binder 1061:1061 <> x:22
+R1078:1086 Repl.Syntax <> exception ind
+binder 1074:1074 <> e:23
+R1092:1097 Repl.Syntax <> tactic ind
+R1112:1112 Repl.Syntax <> t:21 var
+R1126:1131 Repl.Syntax <> single constr
+R1138:1138 Repl.Syntax <> t:21 var
+R1146:1149 Repl.Syntax <> zero constr
+R1157:1160 Repl.Syntax <> zero constr
+R1163:1171 Repl.Syntax <> subst_exn def
+R1176:1176 Repl.Syntax <> x:22 var
+R1178:1178 Repl.Syntax <> e:23 var
+R1187:1191 Repl.Syntax <> throw constr
+R1199:1203 Repl.Syntax <> throw constr
+R1206:1214 Repl.Syntax <> subst_exn def
+R1219:1219 Repl.Syntax <> x:22 var
+R1221:1221 Repl.Syntax <> e:23 var
+R1230:1235 Repl.Syntax <> tMatch constr
+R1249:1254 Repl.Syntax <> tMatch constr
+R1257:1265 Repl.Syntax <> subst_exn def
+R1270:1270 Repl.Syntax <> x:22 var
+R1272:1272 Repl.Syntax <> e:23 var
+R1276:1287 Repl.Syntax <> subst_tactic:24 def
+R1294:1294 Repl.Syntax <> e:23 var
+R1292:1292 Repl.Syntax <> x:22 var
+R1298:1309 Repl.Syntax <> subst_tactic:24 def
+R1316:1316 Repl.Syntax <> e:23 var
+R1314:1314 Repl.Syntax <> x:22 var
+R1326:1329 Repl.Syntax <> plus constr
+R1346:1355 Coq.Strings.String <> eqb def
+R1357:1357 Repl.Syntax <> x:22 var
+R1457:1460 Repl.Syntax <> plus constr
+R1463:1474 Repl.Syntax <> subst_tactic:24 def
+R1481:1481 Repl.Syntax <> e:23 var
+R1479:1479 Repl.Syntax <> x:22 var
+R1488:1499 Repl.Syntax <> subst_tactic:24 def
+R1506:1506 Repl.Syntax <> e:23 var
+R1504:1504 Repl.Syntax <> x:22 var
+R1395:1398 Repl.Syntax <> plus constr
+R1401:1412 Repl.Syntax <> subst_tactic:24 def
+R1419:1419 Repl.Syntax <> e:23 var
+R1417:1417 Repl.Syntax <> x:22 var
