@@ -94,7 +94,14 @@ Inductive value : ttup -> Prop :=
 
 Theorem value_is_nf : forall v,
   value v -> normal_form v.
-Admitted.
+Proof.  
+
+  intros v H.
+  unfold normal_form.
+  destruct H.
+  intros contra.
+  destruct contra. inversion H. Qed.  
+
 
 Theorem nf_is_value : forall nf,
   normal_form nf -> value nf.
