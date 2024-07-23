@@ -62,25 +62,13 @@ Theorem step_multi_step : forall ts r,
   step_tactic ts r -> multi_step_tactic ts r.
 Proof.
 intros. 
-destruct H.
-- eapply multi_step.
-  + apply s_base_ok. apply H.
+destruct r.
+- eapply multi_step. 
+  + apply H.
   + apply multi_refl.
-- eapply multi_step.
-  + apply s_base_err_back. apply H.
-  + apply multi_refl.
-- eapply multi_step_fail.
-  apply s_base_err_stop. apply H.
-- eapply multi_step.
-  + apply s_skip.
-  + apply multi_refl.
-- eapply multi_step.
-  + apply s_seq.
-  + apply multi_refl.
-- eapply multi_step.
-  + apply s_plus.
-  + apply multi_refl.
-Qed. 
+- apply multi_step_fail.
+  apply H.
+  Qed. 
 
 Theorem multi_step_transitive : forall ts ts' ts'',
   multi_step_tactic ts (ok ts') ->
