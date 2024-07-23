@@ -86,6 +86,32 @@ remember (ok ts'). induction H1.
   + apply H2.
   Qed.   
 
+Definition normal_form (ts : ttup) :=
+  ~exists r, step_tactic ts r.
+
+Inductive value : ttup -> Prop :=
+| v_skip_no_cont : forall g bs, value (g, skip, [], bs).
+
+Theorem value_is_nf : forall v,
+  value v -> normal_form v.
+Admitted.
+
+Theorem nf_is_value : forall nf,
+  normal_form nf -> value nf.
+Admitted.
+
+(* TODO: this doesn't seem to be working very well: *)
+
+Definition normalizes_to (ts : ttup) (r : result ttup) :=
+  multi_step_tactic ts r /\
+    (r = failure \/ (exists ts', r = ok ts' /\ normal_form ts')).
+
+Definition behaves_same (t1 t2 : tactic) := forall g ks bs r,
+  normalizes_to (g, t1, ks, bs) r <->
+  normalizes_to (g, t2, ks, bs) r.
+
+Lemma seq_skip : forall t, behaves_same t (seq t skip).
+Admitted.
 
 (* TESTING *)
 
