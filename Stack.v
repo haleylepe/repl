@@ -135,12 +135,32 @@ Goal stepsto (disj tru fls) (seq
                                (base istru))
              none.
 Proof.
-Admitted.
+unfold stepsto. exists [].
+eapply multi_step.
+- apply s_seq.
+- eapply multi_step.
+    + apply s_plus.
+    + eapply multi_step.
+        * apply s_base_ok. apply s_rght.
+        * eapply multi_step.
+            -- apply s_skip.
+            -- eapply multi_step.
+                ++ apply s_base_err_back. apply s_istru_fls.
+                ++ eapply multi_step.
+                    ** apply s_base_ok. apply s_lft.
+                    ** eapply multi_step.
+                        --- apply s_skip.
+                        --- eapply multi_step.
+                            +++ apply s_base_ok. apply s_istru_tru.
+                            +++ apply multi_refl.
+                            Qed.  
+
+
+
 
 (* Goal (False \/ False) \/ (False \/ True).
    Proof. (left + right); (left + right); apply I.
  *)
-
 Goal stepsto (disj (disj fls fls) (disj fls tru))
              (seq
                  (plus (base lft) (base rght))
@@ -149,4 +169,64 @@ Goal stepsto (disj (disj fls fls) (disj fls tru))
                     (base istru)))
              none.
 Proof.
-Admitted.
+    unfold stepsto. exists [].
+    eapply multi_step.
+        - apply s_seq.
+        - eapply multi_step.
+            + apply s_plus.
+            + eapply multi_step.
+                * apply s_base_ok. apply s_lft.
+                * eapply multi_step.
+                    -- apply s_skip.
+                    -- eapply multi_step.
+                        ++ apply s_seq.
+                        ++ eapply multi_step.
+                            ** apply s_plus.
+                            ** eapply multi_step.
+                                --- apply s_base_ok. apply s_lft.
+                                --- eapply multi_step.
+                                    +++ apply s_skip.
+                                    +++ eapply multi_step.
+                                        *** apply s_base_err_back. apply s_istru_fls.
+                                        *** eapply multi_step.
+                                            ----  apply s_base_ok. apply s_rght.
+                                            ---- eapply multi_step.
+                                                    ++++ apply s_skip.
+                                                    ++++ eapply multi_step.
+                                                        **** apply s_base_err_back. apply s_istru_fls.
+                                                        **** eapply multi_step. 
+                                                             ----- apply s_base_ok. apply s_rght. 
+                                                             ----- eapply multi_step.
+                                                                    ***** apply s_skip.
+                                                                    ***** eapply multi_step.
+                                                                        apply s_seq.
+                                                                        eapply multi_step.
+                                                                        apply s_plus.
+                                                                        eapply multi_step. 
+                                                                        apply s_base_ok.    
+                                                                        apply s_lft.
+                                                                        eapply multi_step.  
+                                                                        apply s_skip. 
+                                                                        eapply multi_step.
+                                                                        apply s_base_err_back. apply s_istru_fls.
+                                                                        eapply multi_step. 
+                                                                        apply s_base_ok. apply s_rght.
+                                                                        eapply multi_step.
+                                                                        apply s_skip. 
+                                                                        eapply multi_step. 
+                                                                        apply s_base_ok. apply s_istru_tru.
+                                                                        apply multi_refl.
+                                                                        Qed.  
+
+
+
+                    
+
+
+
+
+                    
+                                                
+                    
+
+
