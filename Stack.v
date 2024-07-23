@@ -87,9 +87,6 @@ remember (ok ts'). induction H1.
   Qed.   
 
 
-
-Qed.
-
 (* TESTING *)
 
 Parameter tru : goal.
