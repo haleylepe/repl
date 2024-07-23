@@ -61,14 +61,46 @@ Definition stepsto (g : goal) (t : tactic) (g' : goal) : Prop :=
 Theorem step_multi_step : forall ts r,
   step_tactic ts r -> multi_step_tactic ts r.
 Proof.
-Admitted.
+intros. 
+destruct H.
+- eapply multi_step.
+  + apply s_base_ok. apply H.
+  + apply multi_refl.
+- eapply multi_step.
+  + apply s_base_err_back. apply H.
+  + apply multi_refl.
+- eapply multi_step_fail.
+  apply s_base_err_stop. apply H.
+- eapply multi_step.
+  + apply s_skip.
+  + apply multi_refl.
+- eapply multi_step.
+  + apply s_seq.
+  + apply multi_refl.
+- eapply multi_step.
+  + apply s_plus.
+  + apply multi_refl.
+Qed. 
 
 Theorem multi_step_transitive : forall ts ts' ts'',
   multi_step_tactic ts (ok ts') ->
   multi_step_tactic ts' (ok ts'') ->
   multi_step_tactic ts (ok ts'').
 Proof.
-Admitted.
+intros ts ts' ts'' H1 H2.
+remember (ok ts'). induction H1.
+- inversion Heqr. subst. apply H2.
+- subst. eapply multi_step.
+  + apply H.
+  + apply IHmulti_step_tactic. reflexivity.
+- eapply multi_step.
+  + inversion Heqr. 
+  + apply H2.
+  Qed.   
+
+
+
+Qed.
 
 (* TESTING *)
 
