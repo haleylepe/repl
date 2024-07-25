@@ -28,7 +28,7 @@ Definition ttup : Type := goal * tactic * list k * list (goal * tactic * list k)
 Inductive step_tactic : ttup -> result ttup -> Prop :=
 | s_base_ok : forall g g' a ks bs,
     step_atomic g a =  ok g'  ->
-    step_tactic (g, base a, ks, bs) (ok (g', skip, ks, bs)) 
+    step_tactic (g, base a, ks, bs) (ok (g', skip, ks, bs))
 | s_base_err_back : forall g g' a ks ks' t' bs,
     step_atomic g a = failure ->
     step_tactic (g, base a, ks, (g', t', ks') :: bs) (ok (g', t', ks', bs))
@@ -137,13 +137,16 @@ step_tactic ts r1 -> step_tactic ts r2 -> r1 = r2.
 Proof. 
 intros ts r1 r2 H1.
 generalize dependent r2.
-induction H1.
-intros r2 H2.
+induction H1; intros r2 H2.
 - inversion H2; subst.
   + rewrite H in H6. inversion H6. reflexivity.
   + rewrite H in H6. inversion H6.
   + rewrite H in H6. inversion H6.
-- (*got stuck*) 
+- inversion H2; subst.
+  + (* there's a contradiction between H and H6.
+       one tactic that directly handles such a goal is: *)
+    congruence.
+  + auto.
  
 (* intros ts r1 r2 H1 H2.
 inversion H1. subst. 
