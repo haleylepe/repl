@@ -12,7 +12,7 @@ Inductive result (T : Type) :=
 Arguments ok {T}.
 Arguments failure {T}.
 
-Parameter step_atomic : goal -> atomic -> result goal -> Prop.
+Parameter step_atomic : goal -> atomic -> result goal.
 
 Inductive tactic :=
 | skip
@@ -27,13 +27,13 @@ Definition ttup : Type := goal * tactic * list k * list (goal * tactic * list k)
 
 Inductive step_tactic : ttup -> result ttup -> Prop :=
 | s_base_ok : forall g g' a ks bs,
-    step_atomic g a (ok g') ->
-    step_tactic (g, base a, ks, bs) (ok (g', skip, ks, bs))
+    step_atomic g a =  ok g'  ->
+    step_tactic (g, base a, ks, bs) (ok (g', skip, ks, bs)) 
 | s_base_err_back : forall g g' a ks ks' t' bs,
-    step_atomic g a failure ->
+    step_atomic g a = failure ->
     step_tactic (g, base a, ks, (g', t', ks') :: bs) (ok (g', t', ks', bs))
 | s_base_err_stop : forall g a ks,
-    step_atomic g a failure ->
+    step_atomic g a = failure ->
     step_tactic (g, base a, ks, []) failure
 | s_skip : forall g t ks bs,
     step_tactic (g, skip, _seq t :: ks, bs) (ok (g, t, ks, bs))
@@ -106,6 +106,37 @@ Proof.
 Theorem nf_is_value : forall nf,
   normal_form nf -> value nf.
 Admitted.
+
+(* Theorem progress : forall ts,
+  value ts \/ exists ts', step_tactic ts (ok ts') \/ step_tactic ts failure. *)
+
+  Theorem progress : forall t,
+  value t \/ exists r, step_tactic t r.
+  Proof.
+
+  intros.
+  destruct t as [[[g t] ks] bs].
+  induction t.
+    - destruct ks.
+      + left. constructor.
+      + right. destruct k0. eexists. eapply s_skip.
+    -  right. destruct (step_atomic g a) eqn:E.
+      + eexists. apply s_base_ok. apply E.
+      + destruct bs.
+        * eexists. eapply s_base_err_stop. apply E.
+        * destruct p as [[g' t'] ks'].
+          -- eexists. eapply s_base_err_back. apply E.
+    - right. eexists. eapply s_seq.
+    - right. eexists. eapply s_plus. 
+    
+  Qed. 
+
+Theorem determinism : forall ts r1 r2,
+step_tactic ts r1 -> step_tactic ts r2 -> r1 = r2.
+Proof. 
+
+ 
+
 
 (* TODO: this doesn't seem to be working very well: *)
 
