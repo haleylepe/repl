@@ -74,6 +74,7 @@ Theorem multi_step_transitive : forall ts ts' ts'',
   multi_step_tactic ts (ok ts') ->
   multi_step_tactic ts' (ok ts'') ->
   multi_step_tactic ts (ok ts'').
+
 Proof.
 intros ts ts' ts'' H1 H2.
 remember (ok ts'). induction H1.
@@ -134,6 +135,27 @@ Admitted.
 Theorem determinism : forall ts r1 r2,
 step_tactic ts r1 -> step_tactic ts r2 -> r1 = r2.
 Proof. 
+intros ts r1 r2 H1.
+generalize dependent r2.
+induction H1.
+intros r2 H2.
+- inversion H2; subst.
+  + rewrite H in H6. inversion H6. reflexivity.
+  + rewrite H in H6. inversion H6.
+  + rewrite H in H6. inversion H6.
+- (*got stuck*) 
+ 
+(* intros ts r1 r2 H1 H2.
+inversion H1. subst. 
+  - inversion H2. subst. 
+    + rewrite H in H7. inversion H7. reflexivity. (*both s_base_ok*)
+    + rewrite H in H7. inversion H6. discriminate. 
+    + rewrite H in H7. inversion H6. discriminate. 
+  - inversion H. subst.
+    + rewrite H in H5. inversion H2.
+      * inversion H7. subst.  *)
+
+Qed.
 
  
 
