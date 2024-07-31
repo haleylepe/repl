@@ -135,6 +135,14 @@ Admitted.
 Theorem determinism : forall ts r1 r2,
 step_tactic ts r1 -> step_tactic ts r2 -> r1 = r2.
 Proof. 
+(* intros ts r1 r2 H1.
+generalize dependent r2.
+induction H1; intros r2 H2.
+- inversion H2; subst; try (rewrite H in H6; inversion H6; reflexivity).
+- inversion H2;  subst ; try ( congruence ) ; auto ;  reflexivity.
+- inversion H2. subst. congruence. reflexivity.  
+- inversion H2 ; subst; reflexivity. *)
+
 intros ts r1 r2 H1.
 generalize dependent r2.
 induction H1; intros r2 H2.
@@ -147,7 +155,17 @@ induction H1; intros r2 H2.
        one tactic that directly handles such a goal is: *)
     congruence.
   + auto.
- 
+- inversion H2. subst.
+  + congruence.
+  + reflexivity.
+- inversion H2. subst.
+  + reflexivity.
+- inversion H2. subst.
+  + reflexivity.
+- inversion H2. subst.
+  + reflexivity.
+  Qed.
+
 (* intros ts r1 r2 H1 H2.
 inversion H1. subst. 
   - inversion H2. subst. 
@@ -158,7 +176,7 @@ inversion H1. subst.
     + rewrite H in H5. inversion H2.
       * inversion H7. subst.  *)
 
-Qed.
+
 
  
 
@@ -184,13 +202,13 @@ Parameter disj : goal -> goal -> goal.
 
 Parameter lft : atomic.
 Parameter rght : atomic.
-Axiom s_lft : forall g1 g2, step_atomic (disj g1 g2) lft (ok g1).
-Axiom s_rght : forall g1 g2, step_atomic (disj g1 g2) rght (ok g2).
+Axiom s_lft : forall g1 g2, step_atomic (disj g1 g2) lft = (ok g1).
+Axiom s_rght : forall g1 g2, step_atomic (disj g1 g2) rght = (ok g2).
 
 Parameter none : goal.
 Parameter istru : atomic.
-Axiom s_istru_tru : step_atomic tru istru (ok none).
-Axiom s_istru_fls : step_atomic fls istru failure.
+Axiom s_istru_tru : step_atomic tru istru = (ok none).
+Axiom s_istru_fls : step_atomic fls istru = failure.
 
 Hint Constructors step_tactic : core.
 Hint Resolve s_lft s_rght s_istru_tru s_istru_fls : core.
@@ -230,6 +248,7 @@ Goal stepsto (disj fls tru) (seq
              none.
 Proof.
   solve_stepsto.
+  (* (left + right); apply I.  *)
 Qed.
 
 (* Goal True \/ False.

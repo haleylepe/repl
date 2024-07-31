@@ -91,6 +91,13 @@ eapply e_plus_okay2.
 Qed. 
 
 
+(* examples *)
+
+(* Example simple_ex : (True \/ False) /\ (False \/ True).
+Proof. *)
+
+
+
 
 
 
